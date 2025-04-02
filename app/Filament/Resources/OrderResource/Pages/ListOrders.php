@@ -3,7 +3,10 @@
 namespace App\Filament\Resources\OrderResource\Pages;
 
 use App\Filament\Resources\OrderResource;
+use App\Filament\Resources\OrderResource\Widgets\OrderStats;
+use App\Models\Order;
 use Filament\Actions;
+use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ListRecords;
 
 class ListOrders extends ListRecords
@@ -14,6 +17,37 @@ class ListOrders extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            OrderStats::class,
+        ];
+    }
+
+    public function getTabs(): array 
+    {
+        return [
+            null => Tab::make('All'),
+            'New' => Tab::make('new')
+                    ->modifyQueryUsing(fn() => Order::query()->where('status', 'new'))
+                    ->icon('heroicon-m-sparkles'),
+
+            'Processing' => Tab::make('Processing')
+                            ->query(fn($query) => $query->where('status', 'processing'))
+                            ->icon('heroicon-m-arrow-path'),
+
+            'Shipped' => Tab::make('Shipped')
+                        ->query(fn($query) => $query->where('status', 'shipped'))
+                        ->icon('heroicon-m-truck'),
+            'Deliverd' => Tab::make('Deliverd')
+                        ->query(fn($query) => $query->where('status', 'deliverd'))
+                        ->icon('heroicon-m-check-badge'),
+            'Cancelled' => Tab::make('Cancelled')
+                        ->query(fn($query) => $query->where('status', 'cancelled'))
+                        ->icon('heroicon-m-x-circle'),
         ];
     }
 }

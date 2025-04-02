@@ -210,7 +210,7 @@ class OrderResource extends Resource
                     ->searchable(),
                 TextColumn::make('shipping_method')
                     ->searchable(),
-
+                
                 SelectColumn::make('status')
                     ->options([
                         'new' => 'New',
