@@ -39,11 +39,11 @@ class ListOrders extends ListRecords
                             ->query(fn($query) => $query->where('status', 'processing'))
                             ->icon('heroicon-m-arrow-path'),
 
-            'Shipped' => Tab::make('Shipped')
-                        ->query(fn($query) => $query->where('status', 'shipped'))
+            'Shipping' => Tab::make('Shipping')
+                        ->query(fn($query) => $query->where('status', 'shipping'))
                         ->icon('heroicon-m-truck'),
-            'Deliverd' => Tab::make('Deliverd')
-                        ->query(fn($query) => $query->where('status', 'deliverd'))
+            'Delivered' => Tab::make('Delivered')
+                        ->query(fn($query) => $query->where('status', 'delivered'))
                         ->icon('heroicon-m-check-badge'),
             'Cancelled' => Tab::make('Cancelled')
                         ->query(fn($query) => $query->where('status', 'cancelled'))

@@ -7,7 +7,6 @@ use App\Filament\Resources\OrderResource\RelationManagers;
 use App\Filament\Resources\OrderResource\RelationManagers\AddressRelationManager;
 use App\Models\Order;
 use App\Models\Product;
-use Faker\Provider\ar_EG\Text;
 use Filament\Forms;
 use Filament\Forms\Components\{Repeater, Grid, Hidden, Placeholder, Section, Select, Textarea, TextInput, ToggleButtons};
 use Filament\Forms\Form;

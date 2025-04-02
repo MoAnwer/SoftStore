@@ -2,18 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProductResource\Pages;
-use App\Filament\Resources\ProductResource\RelationManagers;
+use App\Filament\Resources\ProductResource\{RelationManagers, Pages};
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\{FileUpload, Section, TextInput, Group, MarkdownEditor, Toggle, Textarea, Select};
-use Filament\Forms\Form;
-use Filament\Forms\Set;
+use Filament\Forms\{Set, Form};
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Database\Eloquent\{SoftDeletingScope, Builder};
 use Illuminate\Support\Str;
 
 class ProductResource extends Resource
@@ -86,7 +83,7 @@ class ProductResource extends Resource
                             ->searchable()
                             ->required()
                             ->relationship('brand', 'name')
-                    ->required(),
+                            ->required(),
                     ]),
                     Section::make('Status')
                     ->schema([
@@ -104,29 +101,6 @@ class ProductResource extends Resource
                 ])
                 ->columnSpan(1)
                     
-                // Select::make('category_id')
-                //     ->relationship('category', 'name')
-                //     ->required(),
-                // Select::make('brand_id')
-                //     ->relationship('brand', 'name')
-                //     ->required(),
-                
-                // Textarea::make('images')
-                //     ->columnSpanFull(),
-                // Textarea::make('description')
-                //     ->columnSpanFull(),
-                // TextInput::make('price')
-                //     ->required()
-                //     ->numeric()
-                //     ->prefix('$'),
-                // Toggle::make('is_active')
-                //     ->required(),
-                // Toggle::make('is_featured')
-                //     ->required(),
-                // Forms\Components\Toggle::make('is_stock')
-                //     ->required(),
-                // Forms\Components\Toggle::make('on_sale')
-                //     ->required(),
             ])->columns(3);
     }
 
