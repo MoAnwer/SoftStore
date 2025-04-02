@@ -10,6 +10,11 @@ class EditOrder extends EditRecord
 {
     protected static string $resource = OrderResource::class;
 
+    protected function getSavedNotificationMessage(): ?string
+    {
+        return 'Order Updated Successfully';
+    }
+
     protected function getHeaderActions(): array
     {
         return [

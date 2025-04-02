@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\OrderResource\Pages;
 use App\Filament\Resources\OrderResource\RelationManagers;
+use App\Filament\Resources\OrderResource\RelationManagers\AddressRelationManager;
 use App\Models\Order;
 use App\Models\Product;
 use Faker\Provider\ar_EG\Text;
@@ -147,8 +148,9 @@ class OrderResource extends Resource
                                 ->minValue(1)
                                 ->reactive()
                                 ->afterStateUpdated(
-                                    fn($state, Set $set, Get $get) => 
-                                    $set('total_amount', $state * $get('unit_amount'))
+                                    function($state, Set $set, Get $get) {
+                                        return $set('total_amount', $get('unit_amount') * $state);
+                                    }
                                 )
                                 ->columnSpan(2),
 
@@ -256,10 +258,11 @@ class OrderResource extends Resource
         return static::getModel()::count() > 10 ? 'success' : 'primary';
     }
 
+
     public static function getRelations(): array
     {
         return [
-            //
+            AddressRelationManager::class
         ];
     }
 
