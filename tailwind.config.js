@@ -6,7 +6,7 @@ export default {
     "./resources/**/*.vue",
     "./node_modules/preline/dist/*.js",
   ],
-  dark: 'class',
+  darkMode: 'class',
   theme: {
     extend: {}
   },
