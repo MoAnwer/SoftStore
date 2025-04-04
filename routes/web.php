@@ -1,8 +1,10 @@
 <?php
 
-use App\Livewire\{CancelPage, CartPage, HomePage, CategoriesPage, CheckoutPage, MyOrdersPage, ProductDetailsPage, ProductsPage, MyOrderDetailPage};
 use App\Livewire\Auth\{ForgetPasswordPage, LoginPage, RegisterPage, ResetPasswordPage};
+use App\Livewire\SuccessPage;
+use App\Livewire\{CancelPage, CartPage, HomePage, CategoriesPage, CheckoutPage, MyOrdersPage, ProductDetailsPage, ProductsPage, MyOrderDetailPage};
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', HomePage::class);
 Route::get('/products', ProductsPage::class);
