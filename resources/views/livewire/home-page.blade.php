@@ -140,82 +140,51 @@
   </div>
 </div>
 
-    {{-- Brand section start --}}
+  {{-- Brand section start --}}
 
-    <section class="py-20">
-  <div class="max-w-xl mx-auto">
-    <div class="text-center ">
-      <div class="relative flex flex-col items-center">
-        <h1 class="text-5xl font-bold dark:text-gray-200"> Browse Popular<span class="text-blue-500"> Brands
-          </span> </h1>
-        <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
-          <div class="flex-1 h-2 bg-blue-200">
-          </div>
-          <div class="flex-1 h-2 bg-blue-400">
-          </div>
-          <div class="flex-1 h-2 bg-blue-600">
+  <section class="py-20">
+    <div class="max-w-xl mx-auto">
+      <div class="text-center ">
+        <div class="relative flex flex-col items-center">
+          <h1 class="text-5xl font-bold dark:text-gray-200"> Browse Popular<span class="text-blue-500"> Brands
+            </span> </h1>
+          <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
+            <div class="flex-1 h-2 bg-blue-200">
+            </div>
+            <div class="flex-1 h-2 bg-blue-400">
+            </div>
+            <div class="flex-1 h-2 bg-blue-600">
+            </div>
           </div>
         </div>
+        <p class="mb-12 text-base text-center text-gray-500">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
+          Pariatur
+          numquam, odio quod nobis ipsum ex cupiditate?
+        </p>
       </div>
-      <p class="mb-12 text-base text-center text-gray-500">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-        Pariatur
-        numquam, odio quod nobis ipsum ex cupiditate?
-      </p>
     </div>
-  </div>
-  <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-0">
-    <div class="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-2">
+    <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-0">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-2">
 
-      <div class="bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <a href="" class="">
-          <img src="https://i.pinimg.com/originals/a0/97/c3/a097c3c89b6d9a14f52f9515395d5220.png" alt="" class="object-cover w-full h-64 rounded-t-lg">
-        </a>
-        <div class="p-5 text-center">
-          <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
-            Apple
+      @foreach ($brands as $brand)
+        <div class="bg-white rounded-lg shadow-md dark:bg-gray-800" wire:key="{{ $brand->id }}">
+          <a href="" class="">
+            <img src="{{ url('storage', $brand->image)}}" alt="{{ $brand->name }}" class="object-cover w-full h-64 rounded-t-lg">
           </a>
+          <div class="p-5 text-center">
+            <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
+              {{ $brand->name }}
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <a href="" class="">
-          <img src="https://i.pinimg.com/originals/1d/35/83/1d35833251dec0ad373ad7cbbbf4f3e2.png" alt="" class="object-cover w-full h-64 rounded-t-lg">
-        </a>
-        <div class="p-5 text-center">
-          <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
-            Samsung
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <a href="" class="">
-          <img src="https://salesindia.com/media/codazon_cache/brand/400x400/wysiwyg/codazon/main-content-22/Brand_logo/ONEPLUS_LOGO_.png" alt="" class="object-cover w-full h-64 rounded-t-lg">
-        </a>
-        <div class="p-5 text-center">
-          <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
-            One Plus
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <a href="" class="">
-          <img src="https://i.pinimg.com/originals/72/15/96/721596edd1de9db231a385d52a9081f8.png" alt="" class="object-cover w-full h-64 rounded-t-lg">
-        </a>
-        <div class="p-5 text-center">
-          <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
-            Xiaomi
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      @endforeach
     
-{{-- Brand section end --}}
+      </div>
+    </div>
+  </section>
+      
+  {{-- Brand section end --}}
 
 
 
@@ -247,14 +216,15 @@
   <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
 
-      <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
+     @foreach ($categories as $category)
+         <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#" wire:key="{{ $category->id }}">
         <div class="p-4 md:p-5">
           <div class="flex justify-between items-center">
             <div class="flex items-center">
-              <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="https://cdn.bajajelectronics.com/product/b002c02c-c379-49f8-b2a6-bd2e56d0e23a" alt="Image Description">
+              <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="{{ url('storage', $category->image)}}" alt="Image Description">
               <div class="ms-3">
                 <h3 class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                  Laptops
+                  {{ $category->name }}
                 </h3>
               </div>
             </div>
@@ -266,66 +236,9 @@
           </div>
         </div>
       </a>
+     @endforeach
 
-      <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-        <div class="p-4 md:p-5">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center">
-              <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="https://static.toiimg.com/thumb/msid-86223197,width-400,resizemode-4/86223197.jpg" alt="Image Description">
-              <div class="ms-3">
-                <h3 class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                  Smartphones
-                </h3>
-              </div>
-            </div>
-            <div class="ps-3">
-              <svg class="flex-shrink-0 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </a>
 
-      <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-        <div class="p-4 md:p-5">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center">
-              <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/watch-card-40-ultra2-202309_GEO_IN_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1693611639854" alt="Image Description">
-              <div class="ms-3">
-                <h3 class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                  Smartwatches
-                </h3>
-              </div>
-            </div>
-            <div class="ps-3">
-              <svg class="flex-shrink-0 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-        <div class="p-4 md:p-5">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center">
-              <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1632893007.55719480!400x400!85.png" alt="Image Description">
-              <div class="ms-3">
-                <h3 class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
-                  Television
-                </h3>
-              </div>
-            </div>
-            <div class="ps-3">
-              <svg class="flex-shrink-0 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </a>
 
     </div>
   </div>

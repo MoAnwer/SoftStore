@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
+use Illuminate\Support\Number;
 
 class Product extends Model
 {
@@ -26,6 +27,16 @@ class Product extends Model
     public function orderItem() : HasMany
     {
         return $this->hasMany(OrderItem::class)->withDefault();
+    }
+
+    public function scopeActive() 
+    {
+        return $this->query()->where('is_active', 1);
+    }
+
+    public function getFormatedPriceAttribute()
+    {
+        return Number::currency($this->price, 'SDG');
     }
 
 }
