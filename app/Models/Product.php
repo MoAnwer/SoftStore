@@ -29,6 +29,7 @@ class Product extends Model
         return $this->hasMany(OrderItem::class)->withDefault();
     }
 
+
     public function scopeActive() 
     {
         return $this->query()->where('is_active', 1);
@@ -36,7 +37,7 @@ class Product extends Model
 
     public function getFormatedPriceAttribute()
     {
-        return Number::currency($this->price, 'SDG');
+        return Number::currency($this->price, 'SDG', precision: 0);
     }
 
 }
