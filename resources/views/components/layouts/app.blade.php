@@ -15,5 +15,7 @@
         </main>
         @livewire('partials.footer')
         @livewireScripts
+        <script src="{{ url('js/sweetalert2.all.min.js') }}" ></script>
+        <x.livewire.alert::scripts >
     </body>
 </html>

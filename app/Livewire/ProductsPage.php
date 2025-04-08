@@ -2,7 +2,10 @@
 
 namespace App\Livewire;
 
+use App\Helpers\CartMangement;
+use App\Livewire\Partials\Navbar;
 use App\Models\{Brand, Category, Product};
+use Jantinnerezo\LivewireAlert\Facades\LivewireAlert;
 use Livewire\Attributes\{Title, Url};
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -26,6 +29,20 @@ class ProductsPage extends Component
 
     #[Url]
     public $price_range = 5000000;
+
+    #[Url]
+    public $sort;
+
+    public $component = 'products-page';
+
+    public function addToCart($productId)
+    {
+        $totalCount = CartMangement::addItemsToCart($productId);
+
+        $this->dispatch('update-cart-count', totalCount: $totalCount)->to(Navbar::class);
+
+        return LivewireAlert::title('Product added successfuly !')->success()->show();
+    }
 
     public function render()
     {
@@ -51,6 +68,14 @@ class ProductsPage extends Component
         ->when(
             $this->price_range,
             fn($q) => $q->whereBetween('price', [0, $this->price_range])
+        )
+        ->when(
+            $this->sort === 'latest', 
+            fn() => $productsQuery->latest()
+        )
+        ->when(
+            $this->sort === 'price', 
+            fn() => $productsQuery->orderBy('price', 'desc')
         );
         
         return view('livewire.products-page', [

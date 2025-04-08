@@ -51,7 +51,7 @@
 
     <div class="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
       <div class="flex justify-between items-center">
-        <p class="text-sm text-gray-400">© 2024 SoftStore. All rights reserved.</p>
+        <p class="text-sm text-gray-400">© {{ date('Y') }} SoftStore. All rights reserved.</p>
       </div>
       <!-- End Col -->
 
