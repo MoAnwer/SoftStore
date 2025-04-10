@@ -7,9 +7,11 @@ SoftStore is e-commerce project build using :
 - [FilamentPHP v3](https://filamentphp.com).
 - [Alphinejs](https://alpinejs.dev/).
 - [Tailwindcss](https://tailwindcss.com).
-- Vite.
-- Preline UI.
+- [Vite](https://vite.dev).
+- [Preline UI](https://preline.co).
+- Livewire Alert
 - Sqlite.
+
 
 # Features :
 
@@ -22,6 +24,9 @@ SoftStore is e-commerce project build using :
 ⚡ Fast navigating using `wire:navigate` to faster page loading
 
 ⚡ Filters & realtime search in datatables
+
+⚡ Real-time & interactive UI using [Livewire v3](livewire.laravel.com)
+
 
 
 ## Admin Panel 💻👏🏼
