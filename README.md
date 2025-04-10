@@ -2,7 +2,7 @@
 
 SoftStore is e-commerce project build using :
 
-- [Laravel 12.x](laravel.com). 
+- [Laravel 12.x](https://laravel.com). 
 - [Livewire v3](livewire.laravel.com).
 - [FilamentPHP v3](https://filamentphp.com).
 - [Alphinejs](https://alpinejs.dev/).
