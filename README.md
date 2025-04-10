@@ -9,7 +9,7 @@ SoftStore is e-commerce project build using :
 - [Tailwindcss](https://tailwindcss.com).
 - [Vite](https://vite.dev).
 - [Preline UI](https://preline.co).
-- Livewire Alert
+- [Livewire Alert](https://github.com/jantinnerezo/livewire-alert)
 - Sqlite.
 - Stripe (in progress)
 - Stripe PHP SDK
@@ -69,30 +69,33 @@ composer install
 ```
 
 2- install `laravel-vite-plugin`
-
 ```
 npm install
 ```
-3- install `tailwindcss`
+3- install Livewire alert 
+```
+composer require jantinnerezo/livewire-alert
+```
+4- install `tailwindcss`
 ```
 npm install tailwindcss -D autoprefixer
 &&
 npx tailwind init
 ```
 
-4- install `preline ui` 
+5- install `preline ui` 
 
 ```
 npm i preline
 ```
 
-5- run database migrations
+6- run database migrations
 
 ```
 php artisan migrate
 ```
 
-6- run application
+7- run application
 ```
 php artisan serve
 ```
