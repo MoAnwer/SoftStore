@@ -11,6 +11,8 @@ SoftStore is e-commerce project build using :
 - [Preline UI](https://preline.co).
 - Livewire Alert
 - Sqlite.
+- Stripe (in progress)
+- Stripe PHP SDK
 
 
 # Features :
