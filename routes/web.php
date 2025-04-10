@@ -3,6 +3,8 @@
 use App\Livewire\Auth\{ForgetPasswordPage, LoginPage, RegisterPage, ResetPasswordPage};
 use App\Livewire\SuccessPage;
 use App\Livewire\{CancelPage, CartPage, HomePage, CategoriesPage, CheckoutPage, MyOrdersPage, ProductDetailsPage, ProductsPage, MyOrderDetailPage};
+use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,4 +32,20 @@ Route::middleware('auth')->group(function() {
   Route::get('/my-orders/{order}', MyOrderDetailPage::class);
   Route::get('/success', SuccessPage::class);
   Route::get('/cancel', CancelPage::class);
+});
+
+
+Route::get('tips', function () {
+  
+  $date = Order::first()->created_at;
+
+
+  dd(
+    $date->diffForHumans(), // 7 hours ago
+    $date->diffForHumans([
+      'parts' => 2,   //  1 week 1 day ago
+      'short' => true //  1w 1d ago
+    ])
+  ); 
+
 });

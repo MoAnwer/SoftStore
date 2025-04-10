@@ -38,7 +38,19 @@ SoftStore is e-commerce project build using :
 
 ## Store & User panel
 
-#### Soooon 🎉...
+<img src="screens/hero-section.jpg">
+<img src="screens/brands-section.jpg">
+<img src="screens/categories-section.jpg">
+<img src="screens/reviews.jpg">
+<img src="screens/products-page.jpg">
+<img src="screens/cart-page.jpg">
+
+### Auth Pages
+<img src="screens/login.jpg">
+<img src="screens/forgot.jpg">
+<img src="screens/reset.jpg">
+
+
 
 ---
 

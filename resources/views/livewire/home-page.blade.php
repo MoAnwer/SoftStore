@@ -173,9 +173,9 @@
             <img src="{{ url('storage', $brand->image)}}" alt="{{ $brand->name }}" class="object-cover w-full h-64 rounded-t-lg">
           </a>
           <div class="p-5 text-center">
-            <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
+            <p class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
               {{ $brand->name }}
-            </a>
+            </p>
           </div>
         </div>
       @endforeach
@@ -185,8 +185,6 @@
   </section>
       
   {{-- Brand section end --}}
-
-
 
 {{-- Categories section start --}}
 
