@@ -1,6 +1,6 @@
 # SoftStore - E-commerce
 
-SoftStore is e-commerce project build using :
+SoftStore is [TALL Stack](https://tallstack.dev/) e-commerce project build using :
 
 - [Laravel 12.x](https://laravel.com). 
 - [Livewire v3](livewire.laravel.com).
@@ -11,7 +11,7 @@ SoftStore is e-commerce project build using :
 - [Preline UI](https://preline.co).
 - [Livewire Alert](https://github.com/jantinnerezo/livewire-alert)
 - Sqlite.
-- Stripe (in progress)
+- [Stripe](https://stripe.com/) (in progress)
 - Stripe PHP SDK
 
 
@@ -27,8 +27,11 @@ SoftStore is e-commerce project build using :
 
 ⚡ Filters & realtime search in datatables
 
-⚡ Real-time & interactive UI using [Livewire v3](livewire.laravel.com)
+⚡ Real-time updates & interactive UI using [Livewire v3](livewire.laravel.com)
 
+⚡ Full Authentication login, registration, forgot password, reset password.
+
+⚡ Payment getway integration with [Stripe](https://stripe.com/)
 
 
 ## Admin Panel 💻👏🏼
