@@ -17,7 +17,7 @@ SoftStore is [TALL Stack](https://tallstack.dev/) e-commerce project build using
 
 # Features :
 
-⚡ Powerful & modren admin panle that build with [FilamentPHP](https://filamentphp.com).
+⚡ Powerful & modren admin panel that build with [FilamentPHP](https://filamentphp.com).
 
 ⚡ Markdown Editor in create products page
 
